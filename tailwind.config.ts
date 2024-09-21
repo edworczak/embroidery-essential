@@ -11,6 +11,17 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        ocean: {
+          DEFAULT: "#006989",
+          100: "#0C7489",
+          200: "#119DA4",
+        },
+        sea: "#007090",
+        cloudy: '#EAEBED',
+        mist: '#A3BAC3',
+      },
+      borderRadius: {
+        DEFAULT: '50vh',
       },
     },
   },
