@@ -1,12 +1,10 @@
 export type ProjectBudgetProps = {
-    price?: string;
-    costs?: [
-        {
-            id: "string";
-            label: string;
-            cost: number;
-        }
-    ];
+    price?: number;
+    costs?: {
+        id: string;
+        label: string;
+        cost: number;
+    }[];
 };
 
 export type ProjectProps = {
@@ -19,7 +17,7 @@ export type ProjectProps = {
     time?: string;
     hoop?: string;
     budget?: ProjectBudgetProps;
-    threads?: [{ id: string; description: string }];
+    threads?: { id: string; description: string }[];
 };
 
 export type ThreadProps = {
@@ -29,10 +27,10 @@ export type ThreadProps = {
     order: number;
     rgb: string;
     substitute?: {
-        anchor: [string];
-        ariadna: [string];
-        dmc: [string];
+        anchor?: string[];
+        ariadna?: string[];
+        dmc?: string[];
     };
-    anchor: [string];
-    ariadna: [string];
+    anchor: string[];
+    ariadna: string[];
 };
