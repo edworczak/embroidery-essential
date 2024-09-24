@@ -1,43 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sacramento&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sacramento&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #A3BAC3;
-  --foreground: #171717;
+    --background: #a3bac3;
+    --foreground: #171717;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+    color: var(--foreground);
+    background: var(--background);
+    font-family: "Quicksand", Helvetica, Arial, sans-serif;
 }
 
 @layer base {
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Sacramento', Georgia, Cambira, serif;
-  }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Sacramento", Georgia, Cambira, serif;
+    }
 
-  h1 {
-    @apply text-5xl;
-  }
+    h1 {
+        @apply text-5xl;
+    }
 
-  h2 {
-    @apply text-4xl;
-  }
+    h2 {
+        @apply text-4xl;
+    }
 
-  h3 {
-    @apply text-3xl;
-  }
+    h3 {
+        @apply text-3xl;
+    }
 
-  button {
-    @apply bg-white/[0.5] border border-ocean-100 text-ocean px-8 py-2 rounded transition-colors backdrop-blur;
-    @apply hover:bg-ocean-100/[0.9] hover:border-ocean-100 hover:text-white;
-  }
+    button {
+        @apply bg-white/[0.5] border border-ocean-100 text-ocean px-8 py-2 rounded transition-colors backdrop-blur;
+        @apply hover:bg-ocean-100/[0.9] hover:border-ocean-100 hover:text-white;
+    }
 
-  .button-primary {
-    @apply bg-ocean text-white px-8 py-2 rounded border-ocean;
-  }
+    .button-primary {
+        @apply bg-ocean text-white px-8 py-2 rounded border-ocean;
+    }
 }
