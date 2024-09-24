@@ -1,10 +1,25 @@
 import fs from "node:fs";
 
-export const rotateElement = (max = 13) => {
-    const direction = Math.floor(Math.random() * 2) ? "" : "-";
-    const value = Math.floor(Math.random() * max);
+export const getRandomNumber = (max) => {
+    return Math.floor(Math.random() * (max + 1));
+};
+
+export const getRandomRotation = (
+    negativeValue = 12,
+    positiveValue = negativeValue
+) => {
+    const value = !getRandomNumber(1)
+        ? `${getRandomNumber(positiveValue)}deg`
+        : `-${getRandomNumber(negativeValue)}deg`;
+    return `rotate(${value})`;
+};
+
+export const rotateElement = (
+    negativeValue = 12,
+    positiveValue = negativeValue
+) => {
     return {
-        transform: `rotate(${direction}${value}deg)`,
+        transform: getRandomRotation(negativeValue, positiveValue),
     };
 };
 
