@@ -30,11 +30,9 @@ export type ThreadProps = {
     name: string;
     order: number;
     rgb: string;
-    substitutes?: {
+    substitutes: {
         anchor?: string[];
         ariadna?: string[];
         dmc?: string[];
     };
-    anchor: string[];
-    ariadna: string[];
 };
