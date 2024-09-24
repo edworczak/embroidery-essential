@@ -1,22 +1,26 @@
-export type ProjectBudgetProps = {
-    price?: number;
-    costs?: {
-        id: string;
-        label: string;
-        cost: number;
-    }[];
-};
-
 export type ProjectProps = {
     id: string;
     name: string;
-    startDate?: Date | "string";
+    startDate?: Date;
     finished?: boolean;
-    finishDate?: Date | "string";
+    finishDate?: Date;
     img?: string;
-    time?: string;
+    workSessions?: {
+        id: string;
+        startDate: Date;
+        endDate: Date;
+        description?: string;
+    }[];
     hoop?: string;
-    budget?: ProjectBudgetProps;
+    fabric?: string;
+    budget?: {
+        price?: number;
+        costs?: {
+            id: string;
+            label: string;
+            cost: number;
+        }[];
+    };
     threads?: { id: string; description: string }[];
 };
 
@@ -26,7 +30,7 @@ export type ThreadProps = {
     name: string;
     order: number;
     rgb: string;
-    substitute?: {
+    substitutes?: {
         anchor?: string[];
         ariadna?: string[];
         dmc?: string[];

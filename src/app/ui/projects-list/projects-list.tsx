@@ -1,15 +1,15 @@
 import { ProjectProps } from "@/app/utils/types";
-import ProjectTile from "@/app/ui/projects-list/components/project-tile";
+import ProjectCard from "@/app/ui/projects-list/components/project-card";
 
 type ProjectsListProps = {
-    projects: [ProjectProps];
+    projects: ProjectProps[];
 };
 
 export default function ProjectsList({ projects }: ProjectsListProps) {
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className="dynamic-grid-3-cols">
             {projects.map((project) => {
-                return <ProjectTile key={project.id} project={project} />;
+                return <ProjectCard key={project.id} project={project} />;
             })}
         </div>
     );
