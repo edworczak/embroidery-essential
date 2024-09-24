@@ -1,6 +1,7 @@
 import ProjectsList from "@/app/ui/projects-list/projects-list";
 import ThreadsList from "@/app/ui/threads-list/threads-list";
 import TapeLabel from "@/app/ui/common/tape-label";
+import Heading from '@/app/ui/heading/heading';
 
 export default function DesignSystem() {
     const projects = [
@@ -113,9 +114,7 @@ export default function DesignSystem() {
 
     return (
         <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
-            <section>
-                <h1>design system</h1>
-            </section>
+            <Heading title="design system" button={{ label: 'test' }}/>
             <section>
                 <div className="dynamic-grid-3-cols">
                     <div className="card p-4 align-vertically">
