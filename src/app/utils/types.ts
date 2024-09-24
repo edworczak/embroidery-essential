@@ -6,8 +6,8 @@ export type ProjectBudgetProps = {
             label: string;
             cost: number;
         }
-    ]
-}
+    ];
+};
 
 export type ProjectProps = {
     id: string;
@@ -19,5 +19,20 @@ export type ProjectProps = {
     time?: string;
     hoop?: string;
     budget?: ProjectBudgetProps;
-    threads?: [{id: string; description: string;}]
-}
+    threads?: [{ id: string; description: string }];
+};
+
+export type ThreadProps = {
+    id: string;
+    brand: string;
+    name: string;
+    order: number;
+    rgb: string;
+    substitute?: {
+        anchor: [string];
+        ariadna: [string];
+        dmc: [string];
+    };
+    anchor: [string];
+    ariadna: [string];
+};
