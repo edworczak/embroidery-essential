@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import { getDictionary } from '@/app/[lang]/dictionaries';
+import Link from "next/link";
+import { getDictionary } from "@/app/[lang]/dictionaries";
 
 type NavProps = {
   lang: string;
-}
+};
 
-export default async function Nav({lang}: NavProps) {
+export default async function Nav({ lang }: NavProps) {
   const dictionary = await getDictionary(lang);
 
   return (

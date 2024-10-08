@@ -1,8 +1,8 @@
-import { userProjects } from '@/app/data/user-projects';
+import { userProjects } from "@/app/data/user-projects";
 
-export default function Page({ params: {lang, slug}}) {
+export default function Page({ params: { lang, slug } }) {
   const project = userProjects.filter((project) => {
-    return project.id === slug
+    return project.id === slug;
   })[0];
 
   return (
