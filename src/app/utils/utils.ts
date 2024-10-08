@@ -1,5 +1,3 @@
-import fs from "node:fs";
-
 export const getRandomNumber = (max) => {
     return Math.floor(Math.random() * (max + 1));
 };
@@ -23,24 +21,8 @@ export const rotateElement = (
     };
 };
 
-export const saveFile = (filename, data) => {
-    fs.writeFileSync(`../data/${filename}.json`, JSON.stringify(data));
-};
-
-export const getDataFromJson = (fileName) => {
-    const file = fs.readFileSync(`../data/${fileName}.json`, {
-        encoding: "utf8",
-    });
-    return JSON.parse(file);
-};
-
-export const getProjects = () => {
-    const projects = getDataFromJson("user-projects");
-    console.log(projects);
-    return projects;
-};
-
 export const getFormattedDate = (systemDate) => {
+    if (!systemDate) return;
     const date = new Date(systemDate);
     let dd: string | number = date.getDate();
     let mm: string | number = date.getMonth() + 1;

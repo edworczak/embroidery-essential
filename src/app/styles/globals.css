@@ -39,12 +39,12 @@ body {
     }
 
     button {
-        @apply bg-white/[0.5] border border-ocean-100 text-ocean px-8 py-2 rounded transition-colors backdrop-blur;
+        @apply bg-ocean border border-ocean text-white px-8 py-2 rounded transition-colors backdrop-blur;
         @apply hover:bg-ocean-100/[0.9] hover:border-ocean-100 hover:text-white;
     }
 
-    .button-primary {
-        @apply bg-ocean text-white px-8 py-2 rounded border-ocean;
+    input {
+        @apply border-b border-ocean py-1;
     }
 
     section {

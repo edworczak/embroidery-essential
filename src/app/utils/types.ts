@@ -36,3 +36,9 @@ export type ThreadProps = {
         dmc?: string[];
     };
 };
+
+export type ButtonProps = {
+    id: string;
+    label: string;
+    onClick?: () => void;
+}
