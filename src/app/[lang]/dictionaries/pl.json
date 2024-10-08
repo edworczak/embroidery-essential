@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "threads": "muliny",
+    "projects": "projekty",
+    "admin": "panel administacyjny"
+  },
+  "pages": {
+    "projects": {
+      "h1": "moje projekty",
+      "open": "otwarte projekty",
+      "closed": "ukończone projekty"
+    }
+  },
+  "project": {
+    "name": "tytuł",
+    "startDate": "data rozpoczęcia",
+    "finished": "projekt ukończony",
+    "finishDate": "data ukończenia",
+    "hoop": "tamborek",
+    "budget": "budżet",
+    "price": "cena",
+    "costs": "koszty",
+    "threads": "muliny"
+  }
+}
