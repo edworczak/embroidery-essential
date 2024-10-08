@@ -1,9 +1,7 @@
 import { ProjectProps } from "@/app/utils/types";
-import Image from "next/image";
-import Link from "next/link";
-import { getFormattedDate, rotateElement } from "@/app/utils/utils";
+import { getFormattedDate } from "@/app/utils/utils";
 import CardButtons from "@/app/ui/common/card-buttons";
-import TapeLabel from "@/app/ui/common/tape-label";
+import Card from '@/app/ui/common/card/card';
 
 type ProjectTileProps = {
     project: ProjectProps;
@@ -20,36 +18,11 @@ export default function ProjectCard({ project }: ProjectTileProps) {
         },
     ];
 
-    if (!project.finished)
-        buttons.push({ id: "btn-continue", label: "kontynuuj" });
-
     return (
         <div className="flex flex-col">
-            <Link href="#" className="bg-white gap-4 flex p-2 grow shadow-md">
-                <div className="relative shrink-0 min-w-[120px]">
-                    <div
-                        className="aspect-square relative w-full border-white border-4 shadow-md"
-                        style={rotateElement(8)}
-                    >
-                        <Image
-                            src={project.img || defaultImage}
-                            alt={project.name}
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
-
-                    {project.finishDate && (
-                        <TapeLabel
-                            label={getFormattedDate(project.finishDate)}
-                            cssClasses="-right-2 -bottom-2"
-                        />
-                    )}
-                </div>
-                <div className="flex flex-col justify-between py-2 pr-3 grow">
+            <Card img={{ src: project.img ? project.img : defaultImage, alt: project.name}} tapeLabel={getFormattedDate(project.finishDate)}>
                     <h3 className="mb-6">{project.name}</h3>
-                </div>
-            </Link>
+            </Card>
             <CardButtons buttons={buttons} />
         </div>
     );

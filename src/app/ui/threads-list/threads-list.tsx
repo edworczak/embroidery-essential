@@ -1,11 +1,7 @@
 import ThreadCard from "@/app/ui/threads-list/components/thread-card";
-import { ThreadProps } from "@/app/utils/types";
+import { threads } from '@/app/data/threads';
 
-type ThreadsListProps = {
-    threads: ThreadProps[];
-};
-
-export default function ThreadsList({ threads }: ThreadsListProps) {
+export default function ThreadsList() {
     return (
         <div className="dynamic-grid-3-cols">
             {threads.map((thread) => {

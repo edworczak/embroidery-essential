@@ -1,14 +1,10 @@
-import { ProjectProps } from "@/app/utils/types";
 import ProjectCard from "@/app/ui/projects-list/components/project-card";
+import { userProjects } from '@/app/data/user-projects';
 
-type ProjectsListProps = {
-    projects: ProjectProps[];
-};
-
-export default function ProjectsList({ projects }: ProjectsListProps) {
+export default function ProjectsList() {
     return (
         <div className="dynamic-grid-3-cols">
-            {projects.map((project) => {
+            {userProjects.map((project) => {
                 return <ProjectCard key={project.id} project={project} />;
             })}
         </div>

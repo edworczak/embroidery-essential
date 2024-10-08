@@ -1,8 +1,7 @@
+import { ButtonProps } from '@/app/utils/types';
+
 type CardButtonsProps = {
-    buttons: {
-        id: string;
-        label: string;
-    }[];
+    buttons: ButtonProps[];
 };
 
 export default function CardButtons({ buttons }: CardButtonsProps) {
@@ -13,6 +12,7 @@ export default function CardButtons({ buttons }: CardButtonsProps) {
                     <button
                         key={button.id}
                         className="rounded-b-[20px] bg-ocean text-white rounded-t-none shadow-md"
+                        onClick={button.onClick}
                     >
                         {button.label}
                     </button>
