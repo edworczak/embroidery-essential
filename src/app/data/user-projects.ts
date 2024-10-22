@@ -4,6 +4,7 @@ export const userProjects = [
     name: "Test z kosztami i mulinami",
     startDate: "2024-04-10T00:00:00.000Z",
     hoop: "12",
+    fabric: "bawełna",
     budget: {
       price: 120,
       costs: [
@@ -181,6 +182,7 @@ export const userProjects = [
   {
     id: "prj0003",
     name: "Kot i motyl",
+    startDate: "2023-01-03T00:00:00.000Z",
     finished: true,
     finishDate: "2023-01-15T00:00:00.000Z",
     hoop: "12",
@@ -606,6 +608,31 @@ export const userProjects = [
       {
         id: "dmc3363",
         description: "choinka przy domku",
+      },
+    ],
+  },
+  {
+    id: "pepek",
+    name: "Pepek",
+    startDate: "2024-10-21T00:00:00.000Z",
+    fabric: "surowa bawełna",
+    hoop: "15,5 cm",
+    threads: [
+      {
+        id: "dmc834",
+        description: "żółty kolor oka",
+      },
+      {
+        id: "dmc834",
+        description: "żółty kolor oka, ciemniejszy",
+      },
+      {
+        id: "dmc310",
+        description: "czarny",
+      },
+      {
+        id: "dmc3053",
+        description: "zielony kolor oka",
       },
     ],
   },

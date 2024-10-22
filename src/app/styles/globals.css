@@ -34,13 +34,15 @@ body {
   h4,
   h5,
   h6 {
-    @apply leading-none;
+    @apply leading-none m-0;
     font-family: "Sacramento", Georgia, Cambira, serif;
   }
 
-  button {
-    @apply bg-ocean border border-ocean text-white px-8 py-2 rounded transition-colors backdrop-blur;
+  button,
+  .button {
+    @apply bg-ocean border border-ocean text-white px-6 py-2 rounded-[50%] transition-colors backdrop-blur;
     @apply hover:bg-ocean-100/[0.9] hover:border-ocean-100 hover:text-white;
+    @apply after:content-[''] after:absolute after:h-full after:w-full after:border after:border-black after:rounded-[50%] after:rotate-[8deg] after:top-0 after:left-0;
   }
 
   input {

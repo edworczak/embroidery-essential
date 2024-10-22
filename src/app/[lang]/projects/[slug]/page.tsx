@@ -1,4 +1,5 @@
 import { userProjects } from "@/app/data/user-projects";
+import ProjectPage from "@/app/ui/pages/project";
 
 export default function Page({ params: { lang, slug } }) {
   const project = userProjects.filter((project) => {
@@ -7,7 +8,7 @@ export default function Page({ params: { lang, slug } }) {
 
   return (
     <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
-      <h1>{project.name}</h1>
+      <ProjectPage lang={lang} project={project} />
     </div>
   );
 }

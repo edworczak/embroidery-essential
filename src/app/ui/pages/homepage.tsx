@@ -1,18 +1,18 @@
 import ProjectsList from "@/app/ui/projects-list/projects-list";
 import { getDictionary } from "@/app/[lang]/dictionaries";
 
-type ProjectsPageProps = {
+type HomepageProps = {
   lang: string;
 };
-export default async function ProjectsPage({ lang }: ProjectsPageProps) {
+export default async function Homepage({ lang }: HomepageProps) {
   const dictionary = await getDictionary(lang);
   return (
     <>
       <section>
-        <h1>{dictionary.pages.projects.h1}</h1>
+        <h1>{`${dictionary.homepage.h1}, Ewa`}</h1>
       </section>
       <section>
-        <ProjectsList lang={lang} />
+        <ProjectsList lang={lang} finished={false} />
       </section>
     </>
   );

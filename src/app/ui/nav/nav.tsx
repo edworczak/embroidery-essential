@@ -10,7 +10,8 @@ export default async function Nav({ lang }: NavProps) {
 
   return (
     <div className="fixed flex justify-center gap-4 bottom-0 w-full bg-white p-4 z-40 shadow-2xl">
-      <Link href={`/${lang}`}>{dictionary.nav.projects}</Link>
+      <Link href={`/${lang}`}>{dictionary.nav.home}</Link>
+      <Link href={`/${lang}/projects`}>{dictionary.nav.projects}</Link>
       <Link href={`/${lang}/threads`}>{dictionary.nav.threads}</Link>
     </div>
   );

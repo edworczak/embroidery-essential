@@ -1,5 +1,6 @@
 {
   "nav": {
+    "home": "home",
     "threads": "muliny",
     "projects": "projekty",
     "admin": "panel administacyjny"
@@ -11,15 +12,21 @@
       "closed": "ukończone projekty"
     }
   },
+  "homepage": {
+    "h1": "cześć",
+    "openProjects": "kontynuuj projekt",
+    "shopThreads": "muliny do kupienia"
+  },
   "project": {
-    "name": "tytuł",
-    "startDate": "data rozpoczęcia",
+    "budget": "budżet",
+    "costs": "koszty",
+    "fabric": "materiał",
     "finished": "projekt ukończony",
     "finishDate": "data ukończenia",
     "hoop": "tamborek",
-    "budget": "budżet",
+    "name": "tytuł",
     "price": "cena",
-    "costs": "koszty",
+    "startDate": "data rozpoczęcia",
     "threads": "muliny"
   }
 }

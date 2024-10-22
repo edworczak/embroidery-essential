@@ -19,6 +19,7 @@ const config: Config = {
         sea: "#007090",
         cloudy: "#EAEBED",
         mist: "#A3BAC3",
+        pastelPink: "#fae0e4",
       },
       borderRadius: {
         DEFAULT: "50vh",

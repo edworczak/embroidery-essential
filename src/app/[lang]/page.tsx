@@ -1,12 +1,9 @@
-import ProjectsPage from "@/app/ui/pages/projects";
-import { getDictionary } from "@/app/[lang]/dictionaries";
+import Homepage from "@/app/ui/pages/homepage";
 
-export default async function Home({ params: { lang } }) {
-  const dictionary = await getDictionary(lang);
-  console.log(dictionary);
+export default function Home({ params: { lang } }) {
   return (
     <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
-      <ProjectsPage lang={lang} />
+      <Homepage lang={lang} />
     </div>
   );
 }

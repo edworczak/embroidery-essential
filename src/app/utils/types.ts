@@ -21,7 +21,7 @@ export type ProjectProps = {
       cost: number;
     }[];
   };
-  threads?: { id: string; description: string }[];
+  threads?: { id: string; description?: string }[];
 };
 
 export type ThreadProps = {
@@ -41,4 +41,5 @@ export type ButtonProps = {
   id: string;
   label: string;
   onClick?: () => void;
+  link?: string;
 };

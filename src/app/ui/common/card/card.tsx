@@ -19,9 +19,9 @@ type ModalProps = {
 
 function Dialog({ children, img, color, buttons, tapeLabel }: ModalProps) {
   return (
-    <div>
-      <div className="card">
-        {tapeLabel && <TapeLabel label={tapeLabel} top={-8} left={-8} />}
+    <div className="card">
+      <div>
+        {tapeLabel && <TapeLabel label={tapeLabel} top={-8} right={-8} />}
         <div className="flex justify-between">
           {color && (
             <div>
@@ -49,12 +49,12 @@ function Dialog({ children, img, color, buttons, tapeLabel }: ModalProps) {
               </div>
             </div>
           )}
-          <div className="p-4 flex flex-col justify-center w-full">
+          <div className="p-4 flex flex-col justify-center w-full gap-4">
             {children}
           </div>
         </div>
+        {buttons && <CardButtons buttons={buttons} />}
       </div>
-      {buttons && <CardButtons buttons={buttons} />}
     </div>
   );
 }
