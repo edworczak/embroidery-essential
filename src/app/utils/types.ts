@@ -1,3 +1,14 @@
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+
+export type BudgetProps = {
+  price?: number;
+  costs?: {
+    id: string;
+    label: string;
+    cost: number;
+  }[];
+};
+
 export type ProjectProps = {
   id: string;
   name: string;
@@ -13,14 +24,7 @@ export type ProjectProps = {
   }[];
   hoop?: string;
   fabric?: string;
-  budget?: {
-    price?: number;
-    costs?: {
-      id: string;
-      label: string;
-      cost: number;
-    }[];
-  };
+  budget?: BudgetProps;
   threads?: { id: string; description?: string }[];
 };
 
@@ -40,6 +44,9 @@ export type ThreadProps = {
 export type ButtonProps = {
   id: string;
   label: string;
-  onClick?: () => void;
-  link?: string;
+  icon?: IconProp;
+  action: {
+    onClick?: () => void;
+    link?: string;
+  };
 };

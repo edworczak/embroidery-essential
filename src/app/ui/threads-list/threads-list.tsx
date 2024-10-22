@@ -1,12 +1,23 @@
 import ThreadCard from "@/app/ui/threads-list/components/thread-card";
 import { threads } from "@/app/data/threads";
 
-export default function ThreadsList() {
-  return (
-    <div className="dynamic-grid-3-cols">
-      {threads.map((thread) => {
+type ThreadsListProps = {
+  threadsArray?: string[];
+};
+
+export default function ThreadsList({ threadsArray }: ThreadsListProps) {
+  const getList = () => {
+    if (threadsArray) {
+      return threadsArray.map((threadId) => {
+        const thread = threads.filter((thread) => thread.id === threadId)[0];
+        return <ThreadCard thread={thread} key={thread.id} />;
+      });
+    } else {
+      return threads.map((thread) => {
         return <ThreadCard key={thread.id} thread={thread} />;
-      })}
-    </div>
-  );
+      });
+    }
+  };
+
+  return <div className="dynamic-grid-3-cols">{getList()}</div>;
 }

@@ -1,4 +1,6 @@
 import { getRandomRotation } from "@/app/utils/utils";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 type TapeLabelProps = {
   label: string;
@@ -7,6 +9,7 @@ type TapeLabelProps = {
   bottom?: number;
   left?: number;
   right?: number;
+  icon?: IconProp;
 };
 
 export default function TapeLabel({
@@ -16,9 +19,10 @@ export default function TapeLabel({
   bottom,
   left,
   right,
+  icon,
 }: TapeLabelProps) {
   return (
-    <span
+    <div
       className={`tape-label ${cssClasses ? cssClasses : ""}`}
       style={{
         transform: getRandomRotation(6),
@@ -28,7 +32,13 @@ export default function TapeLabel({
         right: right,
       }}
     >
-      {label}
-    </span>
+      {icon && (
+        <FontAwesomeIcon
+          icon={icon}
+          className="text-base inline-block w-[20px] h-[20px] text-ocean-200"
+        />
+      )}
+      <span>{label}</span>
+    </div>
   );
 }

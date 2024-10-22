@@ -7,17 +7,17 @@ type CardButtonsProps = {
 
 export default function CardButtons({ buttons }: CardButtonsProps) {
   return (
-    <div className="flex justify-end p-2 gap-2">
+    <div className="flex justify-center gap-2 mt-auto">
       {buttons.map((button) => {
-        if (button.link) {
+        if (button.action?.link) {
           return (
-            <Link href={button.link} className="button" key={button.id}>
+            <Link href={button.action.link} className="button" key={button.id}>
               {button.label}
             </Link>
           );
         } else {
           return (
-            <button key={button.id} onClick={button.onClick}>
+            <button key={button.id} onClick={button.action?.onClick}>
               {button.label}
             </button>
           );

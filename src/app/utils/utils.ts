@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 export const getRandomNumber = (max) => {
   return Math.floor(Math.random() * (max + 1));
 };
@@ -32,4 +34,12 @@ export const getFormattedDate = (systemDate) => {
   if (mm < 10) mm = "0" + mm;
 
   return `${dd}.${mm}.${rrrr}`;
+};
+
+export const getCurrency = (value, currency = "zł") => {
+  return `${value.toFixed(2)} ${currency === "zł" && currency}`;
+};
+
+export const getUuid = () => {
+  return uuidv4();
 };

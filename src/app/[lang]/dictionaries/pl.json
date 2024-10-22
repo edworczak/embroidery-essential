@@ -27,6 +27,21 @@
     "name": "tytuł",
     "price": "cena",
     "startDate": "data rozpoczęcia",
-    "threads": "muliny"
+    "threads": "muliny",
+    "profit": "zysk",
+    "cost": "koszt",
+    "info": "szczegóły"
+  },
+  "cta": {
+    "edit": "edytuj",
+    "cancel": "anuluj",
+    "save": "zapisz zmiany"
+  },
+  "projects": {
+    "h1": "moje projekty",
+    "newProject": "nowy projekt"
+  },
+  "threads": {
+    "h1": "muliny"
   }
 }

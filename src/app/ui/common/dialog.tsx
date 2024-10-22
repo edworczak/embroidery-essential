@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import { useEffect, useRef } from "react";
-import CardButtons from "@/app/ui/common/card-buttons";
 import TapeLabel from "@/app/ui/common/tape-label";
 
 type ModalProps = {
@@ -76,16 +75,6 @@ function Dialog({
               </button>
             )}
           </div>
-          <CardButtons
-            buttons={[
-              {
-                id: "cancel",
-                label: "cancel",
-                onClick: onCancel,
-              },
-              { id: "save", label: "save", onClick: onSubmit },
-            ]}
-          />
         </div>
       </div>
     </dialog>

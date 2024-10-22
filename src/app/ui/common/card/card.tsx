@@ -1,62 +1,49 @@
 import type { ReactNode } from "react";
-import CardButtons from "@/app/ui/common/card-buttons";
-
-import { getRandomRotation, rotateElement } from "@/app/utils/utils";
-import Image from "next/image";
+import CardButtons from "@/app/ui/common/card/components/card-buttons";
 import { ButtonProps } from "@/app/utils/types";
-import TapeLabel from "@/app/ui/common/tape-label";
+import Link from "next/link";
 
-type ModalProps = {
-  children: ReactNode;
-  img?: {
-    src: string;
-    alt: string;
+type CardProps = {
+  title?: {
+    title: string;
+    subtitle?: string;
   };
-  color?: string;
+  children: ReactNode;
   buttons?: ButtonProps[];
-  tapeLabel?: string;
+  link?: string;
 };
 
-function Dialog({ children, img, color, buttons, tapeLabel }: ModalProps) {
-  return (
-    <div className="card">
-      <div>
-        {tapeLabel && <TapeLabel label={tapeLabel} top={-8} right={-8} />}
-        <div className="flex justify-between">
-          {color && (
-            <div>
-              <div
-                className="relative top-2 -left-2 aspect-square w-[80px] border-4 border-white shadow-md"
-                style={{
-                  transform: getRandomRotation(12, 8),
-                  background: color,
-                }}
-              />
-            </div>
-          )}
-          {img && (
-            <div className="relative shrink-0 min-w-[120px]">
-              <div
-                className="aspect-square relative w-full border-white border-4 shadow-md top-2 -left-2"
-                style={rotateElement(8)}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          )}
-          <div className="p-4 flex flex-col justify-center w-full gap-4">
-            {children}
+function Card({ title, children, buttons, link }: CardProps) {
+  const getContent = () => {
+    return (
+      <>
+        {title && (
+          <div>
+            <h3>{title.title}</h3>
+            {title.subtitle && <span>{title.subtitle}</span>}
           </div>
+        )}
+        <div className="flex flex-col justify-center w-full gap-4">
+          {children}
         </div>
-        {buttons && <CardButtons buttons={buttons} />}
-      </div>
+      </>
+    );
+  };
+
+  return (
+    <div
+      className={`card flex flex-col h-full gap-6 ${link && "hover:-top-1 hover:-left-1"}`}
+    >
+      {link ? (
+        <Link href={link} className="flex flex-col gap-4 grow">
+          {getContent()}
+        </Link>
+      ) : (
+        <div className="flex flex-col gap-4 grow">{getContent()}</div>
+      )}
+      {buttons && <CardButtons buttons={buttons} />}
     </div>
   );
 }
 
-export default Dialog;
+export default Card;

@@ -3,6 +3,8 @@ import { getFormattedDate } from "@/app/utils/utils";
 import Card from "@/app/ui/common/card/card";
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import ThreadSwatch from "@/app/ui/projects-list/components/thread-swatch";
+import TapeLabel from "@/app/ui/common/tape-label";
+import { faCalendarCheck } from "@fortawesome/free-solid-svg-icons";
 
 type ProjectTileProps = {
   lang: string;
@@ -11,18 +13,30 @@ type ProjectTileProps = {
 
 export default async function ProjectCard({ lang, project }: ProjectTileProps) {
   const dictionary = await getDictionary(lang);
-  const buttons = [
+  const buttons = !project.finished && [
     {
-      id: "btn-edit-project",
-      label: "edytuj",
-      link: `${lang}/projects/${project.id}`,
+      id: "btn-add-session",
+      label: "kontynuuj",
+      action: { link: `${lang}/projects/${project.id}` },
     },
   ];
 
   return (
     <div className="flex flex-col">
-      <Card tapeLabel={getFormattedDate(project.finishDate)} buttons={buttons}>
-        <h3>{project.name}</h3>
+      <Card
+        title={{ title: project.name }}
+        tapeLabel={getFormattedDate(project.finishDate)}
+        buttons={buttons}
+        link={`projects/${project.id}`}
+      >
+        {project.finishDate && (
+          <TapeLabel
+            label={getFormattedDate(project.finishDate)}
+            top={-8}
+            right={-8}
+            icon={faCalendarCheck}
+          />
+        )}
         {project.threads && (
           <div className="flex justify-start flex-wrap gap-2 py-2 border-y border-gray-300">
             {project.threads.map((thread) => {
@@ -35,12 +49,6 @@ export default async function ProjectCard({ lang, project }: ProjectTileProps) {
             <div className="flex justify-between">
               <span>{dictionary.project.startDate}</span>
               <span>{getFormattedDate(project.startDate)}</span>
-            </div>
-          )}
-          {project.finishDate && (
-            <div className="flex justify-between">
-              <span>{dictionary.project.finishDate}</span>
-              <span>{getFormattedDate(project.finishDate)}</span>
             </div>
           )}
           {project.budget?.price && (
