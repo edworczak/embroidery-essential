@@ -4,7 +4,10 @@ import Card from "@/app/ui/common/card/card";
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import ThreadSwatch from "@/app/ui/projects-list/components/thread-swatch";
 import TapeLabel from "@/app/ui/common/tape-label";
-import { faCalendarCheck } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCalendarCheck,
+  faStopwatch,
+} from "@fortawesome/free-solid-svg-icons";
 
 type ProjectTileProps = {
   lang: string;
@@ -17,6 +20,7 @@ export default async function ProjectCard({ lang, project }: ProjectTileProps) {
     {
       id: "btn-add-session",
       label: "kontynuuj",
+      icon: faStopwatch,
       action: { link: `${lang}/projects/${project.id}` },
     },
   ];

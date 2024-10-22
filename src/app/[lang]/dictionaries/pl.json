@@ -3,7 +3,8 @@
     "home": "home",
     "threads": "muliny",
     "projects": "projekty",
-    "admin": "panel administacyjny"
+    "admin": "panel administacyjny",
+    "back": "wstecz"
   },
   "pages": {
     "projects": {

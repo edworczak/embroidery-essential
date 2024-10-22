@@ -10,7 +10,7 @@ type HeaderProps = {
 export default function Header({ title, button, h2 = false }: HeaderProps) {
   return (
     <div className="bg-white">
-      <section>
+      <section className="py-6">
         <div className="flex justify-between">
           <div>{h2 ? <h2>{title}</h2> : <h1>{title}</h1>}</div>
           {button && (

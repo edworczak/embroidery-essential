@@ -50,3 +50,13 @@ export type ButtonProps = {
     link?: string;
   };
 };
+
+export type IconButtonProps = {
+  id: string;
+  label: string;
+  icon: IconProp;
+  action: {
+    onClick?: () => void;
+    link?: string;
+  };
+};

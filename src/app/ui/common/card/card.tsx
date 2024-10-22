@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
-import CardButtons from "@/app/ui/common/card/components/card-buttons";
-import { ButtonProps } from "@/app/utils/types";
+import { IconButtonProps } from "@/app/utils/types";
 import Link from "next/link";
+import IconButton from "@/app/ui/common/icon-button/icon-button";
 
 type CardProps = {
   title?: {
@@ -9,7 +9,7 @@ type CardProps = {
     subtitle?: string;
   };
   children: ReactNode;
-  buttons?: ButtonProps[];
+  buttons?: IconButtonProps[];
   link?: string;
 };
 
@@ -41,7 +41,21 @@ function Card({ title, children, buttons, link }: CardProps) {
       ) : (
         <div className="flex flex-col gap-4 grow">{getContent()}</div>
       )}
-      {buttons && <CardButtons buttons={buttons} />}
+      {buttons && (
+        <div className="flex justify-end gap-4 mt-auto">
+          {buttons.map((button) => {
+            return (
+              <IconButton
+                key={button.id}
+                id={button.id}
+                label={button.label}
+                icon={button.icon}
+                action={button.action}
+              />
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

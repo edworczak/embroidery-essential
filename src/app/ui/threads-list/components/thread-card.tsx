@@ -1,6 +1,7 @@
 import { ThreadProps } from "@/app/utils/types";
 import Card from "@/app/ui/common/card/card";
 import { getRandomRotation } from "@/app/utils/utils";
+import { faBasketShopping, faBox } from "@fortawesome/free-solid-svg-icons";
 
 type ThreadTileProps = {
   thread: ThreadProps;
@@ -8,8 +9,8 @@ type ThreadTileProps = {
 
 export default function ThreadCard({ thread }: ThreadTileProps) {
   const buttons = [
-    { id: "btn-to-stock", label: "do zapasów" },
-    { id: "btn-to-cart", label: "do koszyka" },
+    { id: "btn-to-stock", label: "do zapasów", icon: faBox },
+    { id: "btn-to-cart", label: "do koszyka", icon: faBasketShopping },
   ];
   return (
     <Card

@@ -46,7 +46,8 @@ body {
   }
 
   .icon-button {
-    @apply w-[50px] h-[50px] p-3;
+    @apply button;
+    @apply w-[50px] h-[50px] p-3.5;
     @apply after:-top-1 after:-left-1;
   }
 
