@@ -14,4 +14,16 @@ export const user = {
       "dmc666",
     ],
   },
+  storage: {
+    threads: [
+      "dmc310",
+      "dmcecru",
+      "dmc04",
+      "dmc814",
+      "dmc832",
+      "dmc3713",
+      "dmc12",
+      "dmc666",
+    ],
+  },
 };

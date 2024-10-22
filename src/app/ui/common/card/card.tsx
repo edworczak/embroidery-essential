@@ -51,6 +51,7 @@ function Card({ title, children, buttons, link }: CardProps) {
                 label={button.label}
                 icon={button.icon}
                 action={button.action}
+                showCheckIcon={button.showCheckIcon}
               />
             );
           })}

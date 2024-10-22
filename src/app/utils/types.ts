@@ -55,6 +55,7 @@ export type IconButtonProps = {
   id: string;
   label: string;
   icon: IconProp;
+  showCheckIcon?: boolean;
   action: {
     onClick?: () => void;
     link?: string;
