@@ -75,6 +75,15 @@ export const userProjects = [
     hoop: "12",
   },
   {
+    id: "prj-test-3",
+    name: "Test zakończony",
+    finished: true,
+    hoop: "12",
+    budget: {
+      price: 150,
+    },
+  },
+  {
     id: "prj0001",
     name: "Wiosna",
     description: "Wzór na wiosnę dla Koła Gospodyń Internetowych",

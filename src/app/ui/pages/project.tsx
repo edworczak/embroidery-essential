@@ -37,7 +37,7 @@ export default async function ProjectPage({ lang, project }: ProjectPageProps) {
         button={{
           id: "editProject",
           label: dictionary.cta.edit,
-          action: { link: `projects/edit/${id}` },
+          action: { link: `/${lang}/projects/edit/${id}` },
           icon: faPencil,
         }}
       />
@@ -91,7 +91,7 @@ export default async function ProjectPage({ lang, project }: ProjectPageProps) {
             button={{
               id: "editThreads",
               label: dictionary.cta.edit,
-              action: { link: `projects/edit/${id}` },
+              action: { link: `/${lang}/projects/edit/${id}` },
               icon: faPencil,
             }}
           />

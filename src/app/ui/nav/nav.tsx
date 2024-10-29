@@ -15,7 +15,7 @@ export default async function Nav({ lang }: NavProps) {
   const dictionary = await getDictionary(lang);
 
   return (
-    <div className="fixed bottom-0 w-full bg-white z-40 shadow-2xl">
+    <div className="fixed bottom-0 w-full bg-white/[0.9] z-40 shadow-2xl">
       <section className="flex-row justify-end gap-4 py-5">
         <IconButton
           id="btn-nav-back"

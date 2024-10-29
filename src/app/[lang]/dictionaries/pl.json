@@ -44,5 +44,12 @@
   },
   "threads": {
     "h1": "muliny"
+  },
+  "dialog": {
+    "editProjectTitle": "edytuj projekt",
+    "newProjectTitle": "dodaj nowy projekt",
+    "close": "zamknij",
+    "closeWithoutSaving": "zamknij bez zapisywania",
+    "save": "zapisz"
   }
 }

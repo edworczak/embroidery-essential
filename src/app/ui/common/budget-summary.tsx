@@ -35,19 +35,22 @@ export default function BudgetSummary({
           <span>{getCurrency(budget.price)}</span>
         </div>
       )}
-      {budget.costs &&
-        budget.costs.map((cost) => {
-          return (
-            <div className="flex justify-between" key={cost.id}>
-              <span>{cost.label}</span>
-              <span>{"-" + getCurrency(cost.cost)}</span>
-            </div>
-          );
-        })}
-      <div className="flex justify-between border-t border-gray-300 pt-2">
-        <span>{dictionary.project.profit}</span>
-        <span>{getCurrency(profit)}</span>
-      </div>
+      {budget.costs && (
+        <>
+          {budget.costs.map((cost) => {
+            return (
+              <div className="flex justify-between" key={cost.id}>
+                <span>{cost.label}</span>
+                <span>{"-" + getCurrency(cost.cost)}</span>
+              </div>
+            );
+          })}
+          <div className="flex justify-between border-t border-gray-300 pt-2">
+            <span>{dictionary.project.profit}</span>
+            <span>{getCurrency(profit)}</span>
+          </div>
+        </>
+      )}
     </div>
   );
 }

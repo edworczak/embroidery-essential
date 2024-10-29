@@ -32,7 +32,7 @@ function Card({ title, children, buttons, link }: CardProps) {
 
   return (
     <div
-      className={`card flex flex-col h-full gap-6 ${link && "hover:-top-1 hover:-left-1"}`}
+      className={`card flex flex-col h-full gap-6 ${link && "hover:-top-0.5 hover:-left-0.5"}`}
     >
       {link ? (
         <Link href={link} className="flex flex-col gap-4 grow">

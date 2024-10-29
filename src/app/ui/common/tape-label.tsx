@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 type TapeLabelProps = {
-  label: string;
+  label?: string;
   cssClasses?: string;
   top?: number;
   bottom?: number;
@@ -38,7 +38,7 @@ export default function TapeLabel({
           className="text-base inline-block w-[20px] h-[20px] text-ocean-200"
         />
       )}
-      <span>{label}</span>
+      {label && <span>{label}</span>}
     </div>
   );
 }

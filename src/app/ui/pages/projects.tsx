@@ -15,7 +15,7 @@ export default async function ProjectsPage({ lang }: ProjectsPageProps) {
         button={{
           id: "newProject",
           label: dictionary.project.newProject,
-          action: { link: `projects/new` },
+          action: { link: `/${lang}/projects/new` },
           icon: faPlus,
         }}
       />

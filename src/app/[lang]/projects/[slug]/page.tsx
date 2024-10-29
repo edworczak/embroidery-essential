@@ -6,9 +6,5 @@ export default function Page({ params: { lang, slug } }) {
     return project.id === slug;
   })[0];
 
-  return (
-    <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
-      <ProjectPage lang={lang} project={project} />
-    </div>
-  );
+  return <ProjectPage lang={lang} project={project} />;
 }

@@ -30,10 +30,9 @@ export default async function ProjectCard({ lang, project }: ProjectTileProps) {
       <Card
         title={{ title: project.name }}
         tapeLabel={getFormattedDate(project.finishDate)}
-        buttons={buttons}
-        link={`projects/${project.id}`}
+        link={`/${lang}/projects/${project.id}`}
       >
-        {project.finishDate && (
+        {project.finished && (
           <TapeLabel
             label={getFormattedDate(project.finishDate)}
             top={-8}
@@ -59,6 +58,11 @@ export default async function ProjectCard({ lang, project }: ProjectTileProps) {
             <div className="flex justify-between">
               <span>{dictionary.project.price}</span>
               <span>{project.budget.price}</span>
+            </div>
+          )}
+          {project.finished && (
+            <div className="flex justify-between">
+              <span>{dictionary.project.finished}</span>
             </div>
           )}
         </div>

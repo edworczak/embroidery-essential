@@ -2,7 +2,7 @@
 
 import Dialog from "@/app/ui/common/dialog";
 import { useState } from "react";
-import Input from "@/app/ui/common/input";
+import Input from "@/app/ui/common/form/components/input";
 
 type HeadingProps = {
   title: string;

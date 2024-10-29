@@ -51,10 +51,6 @@ body {
     @apply after:-top-1 after:-left-1;
   }
 
-  input {
-    @apply border-b border-ocean py-1;
-  }
-
   section {
     @apply w-full flex px-4 py-10 flex-col gap-8 mx-auto sm:px-6 md:px-8 lg:px-16;
     @apply max-w-[400px] md:max-w-[840px] xl:max-w-[1380px];
